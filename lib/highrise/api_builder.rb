@@ -40,6 +40,10 @@ module Highrise
   module PhoneNumberMethods; end
   module WebAddressMethods; end
   
+  module DealMethods; end
+  module NoteMethods; end
+  module CommentMethods; end
+  
   class APIBuilder
     #
     # Creates a module that serves as an ActiveResource
@@ -79,6 +83,15 @@ module Highrise
         end
         class WebAddress < Base
           include ::Highrise::WebAddressMethods
+        end
+        class Deal < Base
+          include ::Highrise::DealMethods
+        end
+        class Note < Base
+          include ::Highrise::NoteMethods
+        end
+        class Comment < Base 
+          include ::Highrise::CommentMethods
         end
         class ContactData < Base;end
         # return the module
